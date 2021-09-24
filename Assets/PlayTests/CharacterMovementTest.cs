@@ -41,10 +41,10 @@ public class CharacterMovementTest
         yield return new WaitForSeconds(0.3f);
 
         Vector3 actual = player.transform.position;
-        int xProportion = Mathf.RoundToInt(actual.x / origin.x);
-        int zProportion = Mathf.RoundToInt(actual.z / origin.z);
+        float xProportion = actual.x / origin.x;
+        float zProportion = actual.z / origin.z;
 
-        Assert.AreNotEqual(xProportion, zProportion);
+        Assert.Greater(zProportion, xProportion);
 
     }
 }
