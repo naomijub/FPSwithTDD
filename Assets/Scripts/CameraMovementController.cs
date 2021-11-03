@@ -9,6 +9,7 @@ public class CameraMovementController : MonoBehaviour
     public float sensitivityY = 80f;
     private Camera Camera;
     private IUnityService unityService;
+    [SerializeField]
     private float xAxisRotation;
 
     void Start()

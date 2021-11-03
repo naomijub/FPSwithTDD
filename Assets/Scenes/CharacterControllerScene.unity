@@ -1917,6 +1917,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7041140900461474994, guid: e2ba35b8ee0ac47c8b7a9a0c7dcf7309, type: 3}
+      propertyPath: sensitivityX
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041140900461474994, guid: e2ba35b8ee0ac47c8b7a9a0c7dcf7309, type: 3}
+      propertyPath: sensitivityY
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041140900461474994, guid: e2ba35b8ee0ac47c8b7a9a0c7dcf7309, type: 3}
+      propertyPath: xAxisRotation
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7041140900461474995, guid: e2ba35b8ee0ac47c8b7a9a0c7dcf7309, type: 3}
       propertyPath: m_RootOrder
       value: 2
