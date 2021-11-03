@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FakeUnityService : MonoBehaviour, IUnityService
+public class FakeYUnityService : MonoBehaviour, IUnityService
 {
     public float GetDeltaTime() => 0.3f;
 
@@ -16,14 +16,13 @@ public class FakeUnityService : MonoBehaviour, IUnityService
         {
             return -1f;
         }
-        else if (axis == "Mouse X")
+        else if (axis == "Mouse Y")
         {
-            return 45f;
+            return -1f;
         }
         else
         {
             return 0f;
         }
     }
-
 }
