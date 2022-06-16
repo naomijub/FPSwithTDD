@@ -97,4 +97,32 @@ public class MovementSpeedTest
 
         Assert.AreEqual(expected, actual);
     }
+
+    [Test]
+    public void CalculateGravityVelocity_WhenPlayerIsNotMoving_DecreasesPlayerYVelocity()
+    {
+        float deltaTime = 1f;
+        Vector3 playerOriginalVelocity = moveController.velocity;
+
+        moveController.CalculateGravityVelocity(deltaTime);
+
+        Assert.Less(moveController.velocity.y, playerOriginalVelocity.y);
+        Assert.AreEqual(moveController.velocity.x, playerOriginalVelocity.x);
+        Assert.AreEqual(moveController.velocity.z, playerOriginalVelocity.z);
+        Assert.AreEqual(moveController.velocity.z, 0f);
+    }
+
+    [Test]
+    public void CalculateGravityVelocity_WhenPlayerIsNotMovingAndDeltaTimeIsConsidered_DecreasesPlayerYVelocity()
+    {
+        float deltaTime = 0.3f;
+        Vector3 playerOriginalVelocity = moveController.velocity;
+
+        moveController.CalculateGravityVelocity(deltaTime);
+
+        Vector3 playerGravityAppliedVelocity = moveController.velocity;
+
+        Assert.That(Mathf.Approximately(playerGravityAppliedVelocity.y, -2.94f));
+        Assert.AreEqual(playerOriginalVelocity.y, 0f);
+    }
 }

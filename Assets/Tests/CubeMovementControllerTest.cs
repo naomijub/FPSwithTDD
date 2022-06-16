@@ -74,5 +74,4 @@ public class CubeMovementControllerTest
 
         Assert.AreEqual(new Vector3(2f, 0f, 2f), movedPosition);
     }
-
 }

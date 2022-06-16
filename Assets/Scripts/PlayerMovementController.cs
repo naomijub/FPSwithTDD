@@ -8,6 +8,15 @@ public class PlayerMovementController : MonoBehaviour
     public float xMovementSpeed = 20f;
     [SerializeField]
     public float yMovementSpeed = 35f;
+    [SerializeField]
+    public Vector3 velocity = Vector3.zero;
+    [SerializeField]
+    public Transform groundPosition;
+    public LayerMask groundLayerMask;
+
+    float gravity = -9.8f;
+    float detectionSphereRadius = 0.5f;
+    bool isGrounded;
 
     CharacterController controller;
     IUnityService unityService;
@@ -16,7 +25,7 @@ public class PlayerMovementController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         unityService = GetComponent<IUnityService>();
-
+        groundPosition.position = transform.position - (Vector3.up * transform.localScale.y / 2);
     }
 
     void Update()
@@ -28,6 +37,26 @@ public class PlayerMovementController : MonoBehaviour
         Vector3 movement = MovementOnX(horizontal, deltaTime) + MovementOnZ(vertical, deltaTime);
 
         controller.Move(movement);
+        ApplyGravity(deltaTime);
+    }
+
+    void ApplyGravity(float deltaTime)
+    {
+        CalculateGravityVelocity(deltaTime);
+        controller.Move(velocity * deltaTime);
+    }
+
+    public void CalculateGravityVelocity(float deltaTime)
+    {
+        isGrounded = Physics.CheckSphere(groundPosition.position, detectionSphereRadius, groundLayerMask);
+
+        if (isGrounded && velocity.y < 0f)
+        {
+            velocity.y = -1f;
+        } else
+        {
+            velocity.y += gravity * deltaTime;
+        }
     }
 
     public Vector3 MovementOnX(float axis, float deltaTime)
