@@ -18,6 +18,8 @@ public class MovementSpeedTest
         go.AddComponent<CameraMovementController>();
         moveController = go.GetComponent<PlayerMovementController>();
         cameraController = go.GetComponent<CameraMovementController>();
+        moveController.groundPosition = (new GameObject("")).transform;
+        moveController.groundLayerMask = LayerMask.NameToLayer("Default");
     }
 
     // A Test behaves as an ordinary method
