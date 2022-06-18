@@ -7,10 +7,10 @@ public class CubeMovementController : MonoBehaviour
     public IUnityService unityService;
 
     [SerializeField]
-    private float speed = 20f;   
-    Rigidbody _rb;   
-    
-    void Start()   {     
+    private float speed = 20f;
+    Rigidbody _rb;
+
+    void Start()   {
         _rb = GetComponent<Rigidbody>();
         unityService = GetComponent<IUnityService>();
     }   
