@@ -41,7 +41,6 @@ public class PlayerMovementController : MonoBehaviour
 
         controller.Move(movement);
         ApplyGravity(deltaTime);
-        Debug.Log("VELOCITY: " + velocity.y);
     }
 
     void ApplyGravity(float deltaTime)

@@ -92,7 +92,7 @@ public class CharacterMovementTest
         Vector3 actual2 = go.transform.position;
 
         Assert.AreNotEqual(actual, actual2);
-        Assert.Less(actual2.y, -0.22f);
+        Assert.Less(actual2.y, -0.2f);
         Assert.Greater(actual2.y, -0.33f);
     }
 
