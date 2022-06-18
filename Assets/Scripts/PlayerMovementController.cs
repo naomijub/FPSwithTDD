@@ -25,7 +25,10 @@ public class PlayerMovementController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         unityService = GetComponent<IUnityService>();
-        groundPosition.position = transform.position - (Vector3.up * transform.localScale.y / 2);
+        if (groundPosition.position == Vector3.zero)
+        {
+            groundPosition.position = transform.position - (Vector3.up * transform.localScale.y / 2);
+        }
     }
 
     void Update()
@@ -38,6 +41,7 @@ public class PlayerMovementController : MonoBehaviour
 
         controller.Move(movement);
         ApplyGravity(deltaTime);
+        Debug.Log("VELOCITY: " + velocity.y);
     }
 
     void ApplyGravity(float deltaTime)

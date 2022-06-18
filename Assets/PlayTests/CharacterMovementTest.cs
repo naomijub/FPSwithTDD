@@ -85,7 +85,7 @@ public class CharacterMovementTest
         Vector3 actual = go.transform.position;
 
         Assert.AreNotEqual(original, actual);
-        Assert.Less(actual.y, -0.05f);
+        Assert.Less(actual.y, -0.045f);
         Assert.Greater(actual.y, -0.12f);
 
         yield return new WaitForSeconds(0.1f);

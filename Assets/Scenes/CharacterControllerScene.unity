@@ -1965,6 +1965,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7041140900461474959, guid: e2ba35b8ee0ac47c8b7a9a0c7dcf7309, type: 3}
+      propertyPath: m_StepOffset
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7041140900461474992, guid: e2ba35b8ee0ac47c8b7a9a0c7dcf7309, type: 3}
       propertyPath: groundPosition
       value: 
